@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
     View,
     Text,
@@ -8,11 +8,11 @@ import {
 import { COLORS, FONTS, SIZES, icons } from '../../constants'
 
 import categoriesData from '../../constants/categoriesData'
+import ViewModeContext from '../contexts/ViewModeContext'
 
 function CategoryHeaderSection() {
 
-    const [categories, setCategories] = React.useState(categoriesData)
-    const [viewMode, setViewMode] = React.useState('chart')
+    const { viewMode, setViewMode } = useContext(ViewModeContext)
 
     return (
         <View style={{
@@ -22,7 +22,7 @@ function CategoryHeaderSection() {
             {/* Title */}
             <View>
                 <Text style={{ color: COLORS.primary, ...FONTS.h3 }}>CATEGORIAS</Text>
-                <Text style={{ color: COLORS.darkgray, ...FONTS.body4 }}>{categories.length} Total</Text>
+                <Text style={{ color: COLORS.darkgray, ...FONTS.body4 }}>{categoriesData.length} Total</Text>
             </View>
             {/* Buttons */}
             <View style={{ flexDirection: 'row' }}>

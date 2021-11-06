@@ -12,7 +12,7 @@ function NavBar() {
         <View
             style={{
                 flexDirection: 'row',
-                height: 50,
+                height: 45,
                 alignItems: 'flex-end',
                 justifyContent: 'space-between',
                 paddingHorizontal: SIZES.padding,
@@ -26,8 +26,8 @@ function NavBar() {
                 <Image
                     source={icons.back_arrow}
                     style={{
-                        width: 30,
-                        height: 30,
+                        width: 25,
+                        height: 25,
                         tintColor: COLORS.primary
                     }}
                 />
@@ -39,8 +39,8 @@ function NavBar() {
                 <Image
                     source={icons.more}
                     style={{
-                        width: 30,
-                        height: 30,
+                        width: 25,
+                        height: 25,
                         tintColor: COLORS.primary
                     }}
                 />
