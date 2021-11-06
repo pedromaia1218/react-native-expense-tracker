@@ -37,7 +37,7 @@ const Home = () => {
                     </View>
                     :
                     <View>
-                        <Text>chart comp</Text>
+                        <Text>piroca</Text>
                     </View>
             }
         </View>

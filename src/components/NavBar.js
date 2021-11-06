@@ -5,14 +5,14 @@ import {
     TouchableOpacity,
     Image
 } from 'react-native'
-import { COLORS, FONTS, SIZES, icons } from '../../constants'
+import { COLORS, FONTS, SIZES, icons, normalize } from '../../constants'
 
 function NavBar() {
     return (
         <View
             style={{
                 flexDirection: 'row',
-                height: 45,
+                height: '7%',
                 alignItems: 'flex-end',
                 justifyContent: 'space-between',
                 paddingHorizontal: SIZES.padding,
@@ -20,27 +20,27 @@ function NavBar() {
             }}
         >
             <TouchableOpacity
-                style={{ justifyContent: 'center', width: 58 }}
+                style={{ justifyContent: 'center', width: normalize(58) }}
                 onPress={() => console.log('Back')}
             >
                 <Image
                     source={icons.back_arrow}
                     style={{
-                        width: 25,
-                        height: 25,
+                        width: '40%',
+                        height: '40%',
                         tintColor: COLORS.primary
                     }}
                 />
             </TouchableOpacity>
             <TouchableOpacity
-                style={{ justifyContent: 'center', alignItems: 'flex-end', width: 58 }}
+                style={{ justifyContent: 'center', alignItems: 'flex-end', width: normalize(58) }}
                 onPress={() => console.log('More')}
             >
                 <Image
                     source={icons.more}
                     style={{
-                        width: 25,
-                        height: 25,
+                        width: '40%',
+                        height: '40%',
                         tintColor: COLORS.primary
                     }}
                 />
