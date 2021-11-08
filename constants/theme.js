@@ -1,5 +1,18 @@
-import { Dimensions } from "react-native"
+import { Dimensions, Platform, PixelRatio } from "react-native"
 const { width, height } = Dimensions.get("window")
+
+// based on iphone X's scale
+const wscale = width / 375;
+const hscale = height / 812;
+
+export function normalize(size, based = 'width') {
+  const newSize = (based === 'height') ? size * hscale : size * wscale;
+  if (Platform.OS === 'ios') {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize));
+  } else {
+    return Math.round(PixelRatio.roundToNearestPixel(newSize)) - 2;
+  }
+}
 
 export const COLORS = {
     // base colors
@@ -24,22 +37,22 @@ export const COLORS = {
 
 export const SIZES = {
     // global sizes
-    base: 8,
-    font: 14,
-    radius: 12,
-    padding: 24,
-    padding2: 36,
+    base: normalize(8),
+    font: normalize(14),
+    radius: normalize(12),
+    padding: '6%',
+    padding2: normalize(36),
 
     // font sizes
-    largeTitle: 50,
-    h1: 30,
-    h2: 22,
-    h3: 16,
-    h4: 14,
-    body1: 30,
-    body2: 20,
-    body3: 16,
-    body4: 14,
+    largeTitle: normalize(50),
+    h1: normalize(30),
+    h2: normalize(22),
+    h3: normalize(16),
+    h4: normalize(14),
+    body1: normalize(30),
+    body2: normalize(20),
+    body3: normalize(16),
+    body4: normalize(14),
 
     // app dimensions
     width,
@@ -47,15 +60,15 @@ export const SIZES = {
 }
 
 export const FONTS = {
-    largeTitle: { fontFamily: "Roboto-regular", fontSize: SIZES.largeTitle, lineHeight: 55 },
-    h1: { fontFamily: "Roboto-Black", fontSize: SIZES.h1, lineHeight: 36 },
-    h2: { fontFamily: "Roboto-Bold", fontSize: SIZES.h2, lineHeight: 25 },
-    h3: { fontFamily: "Roboto-Bold", fontSize: SIZES.h3, lineHeight: 22 },
-    h4: { fontFamily: "Roboto-Bold", fontSize: SIZES.h4, lineHeight: 22 },
-    body1: { fontFamily: "Roboto-Regular", fontSize: SIZES.body1, lineHeight: 36 },
-    body2: { fontFamily: "Roboto-Regular", fontSize: SIZES.body2, lineHeight: 30 },
-    body3: { fontFamily: "Roboto-Regular", fontSize: SIZES.body3, lineHeight: 22 },
-    body4: { fontFamily: "Roboto-Regular", fontSize: SIZES.body4, lineHeight: 22 },
+    largeTitle: { fontFamily: "Roboto-regular", fontSize: SIZES.largeTitle, lineHeight: normalize(55) },
+    h1: { fontFamily: "Roboto-Black", fontSize: SIZES.h1, lineHeight: normalize(36) },
+    h2: { fontFamily: "Roboto-Bold", fontSize: SIZES.h2, lineHeight: normalize(25) },
+    h3: { fontFamily: "Roboto-Bold", fontSize: SIZES.h3, lineHeight: normalize(22) },
+    h4: { fontFamily: "Roboto-Bold", fontSize: SIZES.h4, lineHeight: normalize(22) },
+    body1: { fontFamily: "Roboto-Regular", fontSize: SIZES.body1, lineHeight: normalize(36) },
+    body2: { fontFamily: "Roboto-Regular", fontSize: SIZES.body2, lineHeight: normalize(30) },
+    body3: { fontFamily: "Roboto-Regular", fontSize: SIZES.body3, lineHeight: normalize(22) },
+    body4: { fontFamily: "Roboto-Regular", fontSize: SIZES.body4, lineHeight: normalize(22) },
 }
 
 const appTheme = { COLORS, SIZES, FONTS }

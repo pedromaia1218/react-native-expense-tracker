@@ -5,7 +5,7 @@ import {
     TouchableOpacity,
     Image
 } from 'react-native'
-import { COLORS, FONTS, SIZES, icons } from '../../constants'
+import { COLORS, FONTS, SIZES, icons, normalize } from '../../constants'
 
 import categoriesData from '../../constants/categoriesData'
 import ViewModeContext from '../contexts/ViewModeContext'
@@ -28,10 +28,10 @@ function CategoryHeaderSection() {
             <View style={{ flexDirection: 'row' }}>
                 <TouchableOpacity
                     style={{
-                        height: 50,
-                        width: 50,
+                        height: normalize(50),
+                        width: normalize(50),
                         backgroundColor: viewMode == 'chart' ? COLORS.secondary : null,
-                        borderRadius: 25,
+                        borderRadius: normalize(25),
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}
@@ -41,18 +41,18 @@ function CategoryHeaderSection() {
                         source={icons.chart}
                         resizeMode='contain'
                         style={{
-                            width: 20,
-                            height: 20,
+                            width: normalize(20),
+                            height: normalize(20),
                             tintColor: viewMode == 'chart' ? COLORS.white : COLORS.darkgray
                         }}
                     />
                 </TouchableOpacity>
                 <TouchableOpacity
                     style={{
-                        height: 50,
-                        width: 50,
+                        height: normalize(50),
+                        width: normalize(50),
                         backgroundColor: viewMode == 'list' ? COLORS.secondary : null,
-                        borderRadius: 25,
+                        borderRadius: normalize(25),
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}
@@ -62,8 +62,8 @@ function CategoryHeaderSection() {
                         source={icons.menu}
                         resizeMode='contain'
                         style={{
-                            width: 20,
-                            height: 20,
+                            width: normalize(20),
+                            height: normalize(20),
                             tintColor: viewMode == 'list' ? COLORS.white : COLORS.darkgray
                         }}
                     />

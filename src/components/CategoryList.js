@@ -6,7 +6,7 @@ import {
     Image,
     FlatList
 } from 'react-native'
-import { COLORS, FONTS, SIZES, icons } from '../../constants'
+import { COLORS, FONTS, SIZES, icons, normalize } from '../../constants'
 
 import categoriesData from '../../constants/categoriesData'
 
@@ -18,8 +18,8 @@ function CategoryList() {
                 <Image
                     source={item.icon}
                     style={{
-                        width: 30,
-                        height: 30,
+                        width: normalize(30),
+                        height: normalize(30),
                         tintColor: item.color
                     }}
                 />

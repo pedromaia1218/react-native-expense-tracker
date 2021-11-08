@@ -5,7 +5,7 @@ import {
     TouchableOpacity,
     Image
 } from 'react-native'
-import { COLORS, FONTS, SIZES, icons } from '../../constants'
+import { COLORS, FONTS, SIZES, icons, normalize } from '../../constants'
 
 import moment from 'moment'
 import 'moment/locale/pt-br'
@@ -26,18 +26,18 @@ function Header() {
 
             <View style={{ flexDirection: 'row', marginTop: SIZES.padding, alignItems: 'center' }}>
                 <View style={{
-                    height: 50,
-                    width: 50,
+                    height: normalize(50),
+                    width: normalize(50),
                     backgroundColor: COLORS.lightGray,
-                    borderRadius: 25,
+                    borderRadius: normalize(25),
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>
                     <Image
                         source={icons.calendar}
                         style={{
-                            width: 20,
-                            height: 20,
+                            width: '40%',
+                            height: '40%',
                             tintColor: COLORS.lightBlue
                         }}
                     />
