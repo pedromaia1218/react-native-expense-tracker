@@ -2,7 +2,6 @@ import React from 'react'
 import {
     View,
     Text,
-    TouchableOpacity,
     Image
 } from 'react-native'
 import { COLORS, FONTS, SIZES, icons, normalize } from '../../constants'
@@ -26,10 +25,10 @@ function Header() {
 
             <View style={{ flexDirection: 'row', marginTop: SIZES.padding, alignItems: 'center' }}>
                 <View style={{
-                    height: normalize(50),
-                    width: normalize(50),
+                    height: 50,
+                    width: 50,
                     backgroundColor: COLORS.lightGray,
-                    borderRadius: normalize(25),
+                    borderRadius: 25,
                     justifyContent: 'center',
                     alignItems: 'center'
                 }}>

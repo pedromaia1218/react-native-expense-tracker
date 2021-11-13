@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native'
 
 import { Home } from './src/screens/'
-import { ViewModeProvider } from './src/contexts/ViewModeContext'
+import { GlobalProvider } from './src/contexts/Context'
 
 const theme = {
     ...DefaultTheme,
@@ -17,7 +17,7 @@ const Stack = createNativeStackNavigator()
 
 const App = () => {
     return (
-        <ViewModeProvider>
+        <GlobalProvider>
             <NavigationContainer theme={theme}>
                 <Stack.Navigator
                     screenOptions={{
@@ -28,7 +28,7 @@ const App = () => {
                     <Stack.Screen name='Home' component={Home} />
                 </Stack.Navigator>
             </NavigationContainer>
-        </ViewModeProvider>
+        </GlobalProvider>
     )
 }
 

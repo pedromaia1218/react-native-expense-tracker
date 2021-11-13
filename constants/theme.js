@@ -40,7 +40,7 @@ export const SIZES = {
     base: normalize(8),
     font: normalize(14),
     radius: normalize(12),
-    padding: '6%',
+    padding: normalize(24),
     padding2: normalize(36),
 
     // font sizes
