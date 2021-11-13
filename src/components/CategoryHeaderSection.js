@@ -8,11 +8,11 @@ import {
 import { COLORS, FONTS, SIZES, icons, normalize } from '../../constants'
 
 import categoriesData from '../../constants/categoriesData'
-import ViewModeContext from '../contexts/ViewModeContext'
+import GlobalContext from '../contexts/Context'
 
 function CategoryHeaderSection() {
 
-    const { viewMode, setViewMode } = useContext(ViewModeContext)
+    const { viewMode, setViewMode } = useContext(GlobalContext)
 
     return (
         <View style={{

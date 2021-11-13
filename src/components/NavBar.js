@@ -20,7 +20,7 @@ function NavBar() {
             }}
         >
             <TouchableOpacity
-                style={{ justifyContent: 'center', width: normalize(58) }}
+                style={{ justifyContent: 'center', width: 58 }}
                 onPress={() => console.log('Back')}
             >
                 <Image
